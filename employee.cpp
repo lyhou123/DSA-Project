@@ -218,7 +218,7 @@ void LoadFromFile(Nodetype*& plist) {
     while (!file.eof()) {
         temp = GetNode();
         file >> temp->info.empNo;
-        file.ignore();
+        file.ignore(); //clear buffer after reading integer and before reading string
         file.getline(temp->info.empName, MAX_NAME);
         file.getline(temp->info.designation, MAX_DESIGNATION);
 
